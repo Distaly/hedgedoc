@@ -126,5 +126,16 @@
     "Protected - Only owner can edit (forbid guests)": "Protected - Only owner can edit (forbid guests)",
     "Private - Only owner can view & edit": "Private - Only owner can view & edit",
     "changed": "changed",
-    "created": "created"
+    "created": "created",
+    "Table of contents": "Table of contents",
+    "onlineLabel": "List of current users",
+    "editAccessLabelLogin": "Here you can change which users can access the document. Current selected: ",
+    "editAccessLabelLogout": "Here you can see which users can access the document. Current selected: ",
+    "select Language": "Select Language",
+    "history Pads": "List of all pads",
+    "pin at top": "Pin this pad at the top of the list",
+    "Delete from History": "Delete this pad from history",
+    "Guide": "Guide",
+    "select language": "select language",
+    "loginLaya": "You can login with you LAYA credentials"
 }

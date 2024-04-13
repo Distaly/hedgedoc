@@ -1,0 +1,398 @@
+<h1 id="introduction">Introduction</h1>
+<p><strong>HedgeDoc</strong> is a real-time, collaborative markdown note editor.
+    This means that you can write notes with other people and immediately see changes of each participant.
+<h2 id="workspace">Workspace</h2>
+<h3 id="modes">Modes</h3>
+<p><i class="fa fa-eye fa-fw"></i> View: See only the result. Shortcut: Ctrl+Alt+V
+    <i class="fa fa-columns fa-fw"></i> Both: See editor and result at the same time. Usage of 'Both' is discouraged for
+    screen reader user.
+    <i class="fa fa-pencil fa-fw"></i> Edit: See only the editor. Shortcut: Ctrl+Alt+W or to not switch focus
+    immediately: Ctrl+Alt+Shift+W
+    <i class="fa fa-info"></i> Guide: See this information page</p>
+<h3 id="night-mode">Night Mode</h3>
+<p>When you are tired of a white screen and like a night mode, click on the little moon <i class="fa fa-moon-o"></i> and
+    turn on the night view of HedgeDoc.</p>
+<h3 id="image-upload">Image Upload</h3>
+<p>You can upload an image simply by clicking on the upload button <i class="fa fa-upload"></i>.
+    Alternatively, you can <strong>drag-n-drop</strong> an image into the editor. Even <strong>pasting</strong> images
+    is possible!
+    This will automatically upload the image into the pad.
+<h3 id="share-notes">Share Notes</h3>
+<p>If you want to share an <strong>editable</strong> note, just copy the URL.
+    If you want to share a <strong>read-only</strong> note, simply press the publish button <i
+            class="fa fa-share-square-o"></i> and copy the URL.</p>
+<h3 id="permissions">Permissions</h3>
+<p>It is possible to change the access permission of a note through the little button on the top right of the view.
+    There are four possible options:</p>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:left"></th>
+        <th style="text-align:center">Owner read/write</th>
+        <th style="text-align:center">Signed-in read</th>
+        <th style="text-align:center">Signed-in write</th>
+        <th style="text-align:center">Guest read</th>
+        <th style="text-align:center">Guest write</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:left"><span class="text-nowrap"><i
+                        class="fa fa-leaf fa-fw"></i> <strong>Freely</strong></span></td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✔</td>
+    </tr>
+    <tr>
+        <td style="text-align:left"><span class="text-nowrap"><i
+                        class="fa fa-pencil fa-fw"></i> <strong>Editable</strong></span></td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✖</td>
+    </tr>
+    <tr>
+        <td style="text-align:left"><span class="text-nowrap"><i
+                        class="fa fa-id-card fa-fw"></i> <strong>Limited</strong></span></td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✖</td>
+        <td style="text-align:center">✖</td>
+    </tr>
+    <tr>
+        <td style="text-align:left"><span class="text-nowrap"><i
+                        class="fa fa-lock fa-fw"></i> <strong>Locked</strong></span></td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✖</td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✖</td>
+    </tr>
+    <tr>
+        <td style="text-align:left"><span class="text-nowrap"><i
+                        class="fa fa-umbrella fa-fw"></i> <strong>Protected</strong></span></td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✖</td>
+        <td style="text-align:center">✖</td>
+        <td style="text-align:center">✖</td>
+    </tr>
+    <tr>
+        <td style="text-align:left"><span class="text-nowrap"><i
+                        class="fa fa-hand-stop-o fa-fw"></i> <strong>Private</strong></span></td>
+        <td style="text-align:center">✔</td>
+        <td style="text-align:center">✖</td>
+        <td style="text-align:center">✖</td>
+        <td style="text-align:center">✖</td>
+        <td style="text-align:center">✖</td>
+    </tr>
+    </tbody>
+</table>
+<p><strong>Only the owner of the note can change the note&#39;s permissions.</strong></p>
+<h3 id="-slide-mode-slide-example-"><a href="./slide-example">Slide Mode</a></h3>
+<p>You can use a special syntax to organize your note into slides.
+    After that, you can use the <strong><a href="./slide-example">Slide Mode</a></strong> <i class="fa fa-tv"></i> to
+    make a presentation.
+    Visit the above link for details.</p>
+<p>To switch the editor into slide mode, set the <a href="./yaml-metadata#type">document type</a> to <code>slide</code>.
+</p>
+<h2 id="view">View</h2>
+<h3 id="autogenerated-table-of-contents">Autogenerated Table of Contents</h3>
+<p>You can look at the bottom right section of the view area, there is a <em>ToC</em> button <i class="fa fa-bars"></i>.
+    Pressing that button will show you a current <em>Table of Contents</em>, and will highlight which section you&#39;re
+    at.
+    ToCs support up to <strong>three header levels</strong>.</p>
+<h3 id="permalink">Permalink</h3>
+<p>Every header will automatically add a permalink on the right side.
+    You can hover and click <i class="fa fa-chain"></i> to anchor on it.</p>
+<h2 id="edit">Edit</h2>
+<h3 id="editor-modes">Editor Modes</h3>
+<p>You can look in the bottom right section of the editor area, there you&#39;ll find a button with <code>SUBLIME</code>
+    on it.
+    When you click it, you can select 3 editor modes, which will also define your shortcut keys:</p>
+<ul>
+    <li><a href="https://codemirror.net/demo/sublime.html">Sublime</a> (default)</li>
+    <li><a href="https://codemirror.net/demo/emacs.html">Emacs</a></li>
+    <li><a href="https://codemirror.net/demo/vim.html">Vim</a></li>
+</ul>
+<h3 id="auto-complete">Auto-Complete</h3>
+<p>This editor provides full auto-complete hints in markdown.</p>
+<ul>
+    <li>Emojis: type <code>:</code> to show hints.</li>
+    <li>Code blocks: type <code>``` </code>, followed by another character to show syntax highlighting suggestions.</li>
+    <li>Headers: type <code>#</code> to show hint.</li>
+    <li>Referrals: type <code>[]</code> to show hint.</li>
+    <li>Externals: type <code>{}</code> to show hint.</li>
+    <li>Images: type <code>!</code> to show hint.</li>
+</ul>
+<h3 id="title">Title</h3>
+<p>The first <strong>level 1 heading</strong> (e.g. <code># Title</code>) will be used as the note title.</p>
+<h3 id="tags">Tags</h3>
+<p>Tags can be specified with <a href="./yaml-metadata#tags">YAML metadata</a> at the <strong>start</strong> of the
+    note. Those tags will show in your <strong>history</strong>.</p>
+<pre><code class="lang-yml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">tags:</span> features, cool, updated
+<span class="hljs-meta">---</span>
+</code></pre>
+<h3 id="table-of-contents">Table of Contents</h3>
+<p>Use the syntax <code>[TOC]</code> to embed a table of contents into your note.</p>
+<p>[TOC]</p>
+<h3 id="emoji">Emoji</h3>
+<p>You can type any emoji like this :smile: :smiley: :cry: :wink:</p>
+<blockquote>
+    <p>See full emoji list <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">here</a>.</p>
+</blockquote>
+<h3 id="todo-list">ToDo List</h3>
+<ul>
+    <li>[ ] ToDos</li>
+    <li>[x] Buy some salad</li>
+    <li>[ ] Brush teeth</li>
+    <li>[x] Drink some water</li>
+    <li>[ ] <strong>Click my box</strong> and see the source code, if you&#39;re allowed to edit!</li>
+</ul>
+<h3 id="code-block">Code Block</h3>
+<p>We support many programming languages, use the auto complete function to see the entire list.</p>
+<h3 id="blockquote-tags">Blockquote Tags</h3>
+<blockquote>
+    <p>Using the syntax below to specifiy your <strong>name, time and color</strong> to vary the blockquotes.
+        [name=ChengHan Wu] [time=Sun, Jun 28, 2015 9:59 PM] [color=#907bf7]</p>
+    <blockquote>
+        <p>Even support nested blockquotes!
+            [name=Max Mustermann] [time=Sun, Jun 28, 2015 9:47 PM] [color=red]</p>
+    </blockquote>
+</blockquote>
+<h3 id="mathjax">MathJax</h3>
+<p>You can render <em>LaTeX</em> mathematical expressions using <a
+            href="https://www.mathjax.org/"><strong>MathJax</strong></a>,
+    as on <a href="https://math.stackexchange.com/">math.stackexchange.com</a>. Examples:</p>
+<ul>
+    <li>The Euler&#39;s identity: $e^{i\pi} + 1 = 0$</li>
+    <li>The solution of $f(x)=ax^2+bx+c$ where $a \neq 0$ and $a, b, c \in R$ is
+        $$
+        x = {-b \pm \sqrt{b^2-4ac} \over 2a}
+        $$
+    </li>
+    <li>The <em>Gamma function</em>: $\Gamma(n) = \begin{cases}
+        \displaystyle (n-1)!\quad\forall n\in\mathbb N\
+        \displaystyle \int<em>0^\infty t^{n-1}e^{-t}dt\quad\forall n\in\mathbb R^*</em>+
+        \end{cases}$
+    </li>
+</ul>
+<blockquote>
+    <p>More information about <strong>LaTeX</strong> mathematical expressions <a
+                href="https://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">here</a>.
+    </p>
+</blockquote>
+<h3 id="typography">Typography</h3>
+<h4 id="headers">Headers</h4>
+<pre><code class="lang-markdown"># h1 Heading
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
+</code></pre>
+<h4 id="horizontal-rules">Horizontal Rules</h4>
+<hr>
+<hr>
+<hr>
+<h4 id="typographic-replacements">Typographic Replacements</h4>
+<p>(c) (C) (r) (R) (tm) (TM) (p) (P) +-</p>
+<p>test.. test... test.... test..... test?..... test!....</p>
+<p>!!!!!! ???? ,,</p>
+<p>Remarkable---no, awesome!</p>
+<p>During 1980--1988.</p>
+<p>&quot;Smartypants, double quotes&quot;</p>
+<p>&#39;Smartypants, single quotes&#39;</p>
+<h4 id="emphasis">Emphasis</h4>
+<p><strong>This is bold text</strong></p>
+<p><em>This is italic text</em></p>
+<p>
+    <del>Deleted text</del>
+</p>
+<p>lu~lala~</p>
+<p>Superscript: 19^th^</p>
+<p>Subscript: H~2~O</p>
+<p>++Inserted text++</p>
+<p>==Marked text==</p>
+<h4 id="blockquotes">Blockquotes</h4>
+<blockquote>
+    <p>Blockquotes can also be nested...</p>
+    <blockquote>
+        <p>...by using additional greater-than signs right next to each other...</p>
+        <blockquote>
+            <p>...or with spaces between arrows.</p>
+        </blockquote>
+    </blockquote>
+</blockquote>
+<h4 id="lists">Lists</h4>
+<h5 id="unordered">Unordered</h5>
+<ul>
+    <li>Create a list by starting a line with <code>+</code>, <code>-</code>, or <code>*</code></li>
+    <li>Sub-lists are made by indenting 2 spaces:</li>
+    <li>Marker character change forces new list start:</li>
+    <li>Ac tristique libero volutpat at</li>
+    <li>Facilisis in pretium nisl aliquet</li>
+    <li>Nulla volutpat aliquam velit</li>
+    <li>Very easy!</li>
+</ul>
+<h5 id="ordered">Ordered</h5>
+<ol>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit</li>
+    <li><p>Aenean commodo ligula eget dolor</p>
+    </li>
+    <li><p><strong>You can use sequential numbers...</strong></p>
+    </li>
+    <li><strong>...or keep all the numbers as <code>1.</code></strong></li>
+    <li>Aenean massa</li>
+    <li>Cum sociis natoque penatibus</li>
+    <li>Magnis dis parturient montes</li>
+    <li>Nascetur ridiculus mus</li>
+    <li>Donec quam felis</li>
+</ol>
+<h4 id="tables">Tables</h4>
+<table>
+    <thead>
+    <tr>
+        <th>Option</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>data</td>
+        <td>path to data files to supply the data that will be passed into templates.</td>
+    </tr>
+    <tr>
+        <td>engine</td>
+        <td>engine to be used for processing templates. Handlebars is the default.</td>
+    </tr>
+    <tr>
+        <td>ext</td>
+        <td>extension to be used for dest files.</td>
+    </tr>
+    </tbody>
+</table>
+<p>Right aligned columns</p>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:right">Option</th>
+        <th style="text-align:right">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:right">data</td>
+        <td style="text-align:right">path to data files to supply the data that will be passed into templates.</td>
+    </tr>
+    <tr>
+        <td style="text-align:right">engine</td>
+        <td style="text-align:right">engine to be used for processing templates. Handlebars is the default.</td>
+    </tr>
+    <tr>
+        <td style="text-align:right">ext</td>
+        <td style="text-align:right">extension to be used for dest files.</td>
+    </tr>
+    </tbody>
+</table>
+<p>Left aligned columns</p>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:left">Option</th>
+        <th style="text-align:left">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:left">data</td>
+        <td style="text-align:left">path to data files to supply the data that will be passed into templates.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">engine</td>
+        <td style="text-align:left">engine to be used for processing templates. Handlebars is the default.</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">ext</td>
+        <td style="text-align:left">extension to be used for dest files.</td>
+    </tr>
+    </tbody>
+</table>
+<p>Center aligned columns</p>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">Option</th>
+        <th style="text-align:center">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">data</td>
+        <td style="text-align:center">path to data files to supply the data that will be passed into templates.</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">engine</td>
+        <td style="text-align:center">engine to be used for processing templates. Handlebars is the default.</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">ext</td>
+        <td style="text-align:center">extension to be used for dest files.</td>
+    </tr>
+    </tbody>
+</table>
+<h4 id="links">Links</h4>
+<p><a href="https://demo.hedgedoc.org">link text</a>
+    <a href="https://nodeca.github.io/pica/demo/" title="title text!">link with title</a>
+    Autoconverted link <a href="https://github.com/nodeca/pica">https://github.com/nodeca/pica</a></p>
+<h4 id="images">Images</h4>
+<p><img src="https://octodex.github.com/images/minion.png" alt="Minion"></p>
+<p>With a title:
+    <img src="https://octodex.github.com/images/stormtroopocat.jpg" alt="Stormtroopocat" title="The Stormtroopocat"></p>
+<p>Like links, images also have a footnote style syntax with a reference later in the document defining the URL
+    location:
+    <img src="https://octodex.github.com/images/dojocat.jpg" alt="Dojocat" title="The Dojocat"></p>
+<p>Show the image with given size:
+    <img src="https://octodex.github.com/images/minion.png =200x200" alt="Minion"></p>
+<h4 id="footnotes">Footnotes</h4>
+<p>Footnote 1 link[^first].
+    Footnote 2 link[^second].
+    Inline footnote^[Text of inline footnote] definition.
+    Duplicated footnote reference[^second].</p>
+<p>[^first]: Footnote <strong>can have markup</strong>
+    and multiple paragraphs.
+    [^second]: Footnote text.</p>
+<h4 id="definition-lists">Definition Lists</h4>
+<p>Term 1</p>
+<p>: Definition 1
+    with lazy continuation.</p>
+<p>Term 2 with <em>inline markup</em></p>
+<p>: Definition 2</p>
+<p>{ some code, part of Definition 2 }</p>
+<p>Third paragraph of definition 2.</p>
+<p><em>Compact style:</em></p>
+<p>Term 1
+    ~ Definition 1</p>
+<p>Term 2
+    ~ Definition 2a
+    ~ Definition 2b</p>
+<h4 id="abbreviations">Abbreviations</h4>
+<p>This is an HTML abbreviation example.
+    It converts &quot;HTML&quot;, but keeps intact partial entries like &quot;xxxHTMLyyy&quot; and so on.</p>
+<p>*[HTML]: Hyper Text Markup Language</p>
+<h2 id="revisions">Revisions</h2>
+<p>When changes are made to a note previous versions of the note are stored as <code>Revisions</code>, if you ever need
+    to return to a previous save you can find all the note revisions by going to <code>Menu</code> -&gt;
+    <code>Revision</code>.</p>
+<p>The note history on the left displays each revision with a timestamp allowing you to quickly select a revision for
+    the desired date and time. Selecting a revision on the left will display the revised note to the right, the revision
+    will display the changes made with colorization to indicate additions/removals.</p>
+<p>In addition to browsing the revisions, you can download a selected note revision or revert the current note to the
+    selected revision.</p>
+<p>The end ...</p>

@@ -33,15 +33,15 @@ require('../css/cover.css')
 require('../css/site.css')
 
 require('./fix-aria-hidden-for-modals')
-
 const options = {
   valueNames: ['id', 'text', 'timestamp', 'fromNow', 'time', 'tags', 'pinned'],
   item: `<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+          <div class="padnumber"></div>
           <span class="id" style="display:none;"></span>
           <a href="#">
             <div class="item">
-              <div class="ui-history-pin fa fa-thumb-tack fa-fw"></div>
-              <div class="ui-history-close fa fa-close fa-fw" data-toggle="modal" data-target=".delete-history-modal"></div>
+              <div class="ui-history-pin fa fa-thumb-tack fa-fw" aria-labelledby="pintotop" style="padding-top: 2rem"></div>
+              <div class="ui-history-close fa fa-close fa-fw" style="padding-top: 2rem" data-toggle="modal" data-target=".delete-history-modal" aria-labelledby="deletefromhistory"></div>
               <div class="content">
                 <h4 class="text"></h4>
                 <p>
@@ -61,10 +61,8 @@ const options = {
   }]
 }
 const historyList = new List('history', options)
-
 window.migrateHistoryFromTempCallback = pageInit
 setloginStateChangeEvent(pageInit)
-
 pageInit()
 
 function pageInit () {
@@ -174,6 +172,8 @@ function parseHistoryCallback (list, notehistory) {
 historyList.on('updated', e => {
   for (let i = 0, l = e.items.length; i < l; i++) {
     const item = e.items[i]
+    let padcounter = i+1
+    $('.padnumber')[i].innerHTML = "Pad " + padcounter
     if (item.visible()) {
       const itemEl = $(item.elm)
       const values = item._values

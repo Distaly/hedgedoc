@@ -126,5 +126,15 @@
     "Protected - Only owner can edit (forbid guests)": "Geschützt - Nur Besitzer kann bearbeiten (Gäste verboten)",
     "Private - Only owner can view & edit": "Privat - Nur Besitzer kann anschauen & bearbeiten",
     "changed": "verändert",
-    "created": "erstellt"
+    "created": "erstellt",
+    "Guide": "Guide",
+    "Table of contents": "Inhaltsverzeichnis",
+    "onlineLabel": "Liste von teilnehmenden Nutzern",
+    "editAccessLabelLogin": "Hier kannst du ändern, welche Nutzer das Dokument bearbeiten können. Derzeit ausgewählt: ",
+    "editAccessLabelLogout": "Hier siehst du, welche Nutzer das Dokument bearbeiten können. Derzeit ausgewählt: ",
+    "select language": "Sprache auswählen",
+    "history Pads": "List aller Pads",
+    "pin at top": "Dieses Pad an der Spitze der Liste anpinnen",
+    "Delete from History": "Dieses Pad aus dem Versionsverlauf entfernen",
+    "loginLaya": "Du kannst dich mit deinem LAYA-Account einloggen"
 }

@@ -203,6 +203,22 @@ body:not(.night) .night {
     color: #ededed;
 }
 
+.ui-guide-area {
+  /*overflow-y: scroll;*/
+  -webkit-overflow-scrolling: touch;
+}
+@media (min-width: 768px) {
+  .ui-guide-area {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.night .ui-guide-area{
+  background: #333;
+  color: #ededed;
+}
+
 
 .ui-scrollable {
     height: 100%;

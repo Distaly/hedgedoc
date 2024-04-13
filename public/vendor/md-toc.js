@@ -55,7 +55,13 @@
     // No need to do anything for an empty ToC
     if (!titleElements.length) return
 
-    var content = '<ul'
+    let tocLab = document.getElementById("tocLab").textContent
+    let content = ""
+    if (level === 0) {
+      content = '<ul aria-label="' + tocLab + '" '
+    } else {
+      content = '<ul'
+    }
     if (ulClass) {
       content += ' class="' + ulClass + '"'
     }
@@ -122,7 +128,9 @@
   Toc.prototype._showToc = function () {
     this.toc = document.createElement('div')
     this.toc.innerHTML = this.tocContent
+    let arialab = "<%= __('Table of contents') %>"
     this.toc.setAttribute('class', this.tocClass)
+    this.toc.setAttribute("style", "padding-top: 5rem")
     if (!this.options.targetId) {
       this.el.appendChild(this.toc)
     } else {

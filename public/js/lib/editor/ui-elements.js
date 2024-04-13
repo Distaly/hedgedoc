@@ -54,6 +54,7 @@ export const getUIElements = () => ({
   },
   toc: {
     toc: $('.ui-toc'),
+    title: $('.ui-toc-title'),
     affix: $('.ui-affix-toc'),
     label: $('.ui-toc-label'),
     dropdown: $('.ui-toc-dropdown')

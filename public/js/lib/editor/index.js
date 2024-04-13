@@ -693,7 +693,8 @@ export default class Editor {
       readOnly: true,
       autoRefresh: true,
       otherCursors: true,
-      placeholder: "← Start by entering a title here\n===\nVisit /features if you don't know what to do.\nHappy hacking :)"
+      placeholder: "← Start by entering a title here by writing \"# Your title\"\n===\nSwitch to the feature page " +
+        "(Ctrl+Alt+G) for information on how to use Hedgedoc."
     })
 
     return this.editor

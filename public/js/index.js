@@ -622,6 +622,7 @@ Visibility.change(function (e, state) {
 })
 
 // when page ready
+let helpModalShown = false
 $(document).ready(function () {
   // set global ajax timeout
   $.ajaxSetup({
@@ -681,7 +682,11 @@ $(document).ready(function () {
   key.filter = function (e) {
     return true
   }
-  key('ctrl+alt+e', function (e) {
+  key('ctrl+alt+w', function (e) {
+    changeMode(modeType.edit)
+    editor.focus();
+  })
+  key('ctrl+alt+shift+w', function (e) {
     changeMode(modeType.edit)
   })
   key('ctrl+alt+v', function (e) {
@@ -689,6 +694,19 @@ $(document).ready(function () {
   })
   key('ctrl+alt+b', function (e) {
     changeMode(modeType.both)
+  })
+  key('ctrl+alt+g', function (e) {
+    changeMode(modeType.guide)
+  })
+  key('ctrl+alt+i', function (e) {
+    if (!helpModalShown) {
+      $("#help-modal").modal('show');
+      helpModalShown = true;
+    } else {
+      $("#help-modal").modal('hide');
+      helpModalShown = false;
+    }
+
   })
   // toggle-dropdown
   $(document).on('click', '.toggle-dropdown .dropdown-menu', function (e) {
@@ -1018,6 +1036,9 @@ function toggleMode () {
     case modeType.both:
       changeMode(modeType.view)
       break
+    case modeType.guide:
+      changeMode(modeType.guide)
+      break
   }
 }
 
@@ -1038,7 +1059,14 @@ function changeMode (type) {
   ui.area.view.removeClass(scrollClass)
   ui.area.view.removeClass(responsiveClass)
   switch (appState.currentMode) {
+    case modeType.guide:
+      ui.area.edit.hide()
+      ui.area.view.show()
+      ui.area.view.hide()
+      ui.area.guide.show()
+      break;
     case modeType.edit:
+      ui.area.guide.hide()
       ui.area.edit.show()
       ui.area.view.hide()
       if (!editShown) {
@@ -1047,10 +1075,12 @@ function changeMode (type) {
       }
       break
     case modeType.view:
+      ui.area.guide.hide()
       ui.area.edit.hide()
       ui.area.view.show()
       break
     case modeType.both:
+      ui.area.guide.hide();
       ui.area.codemirror.addClass(scrollClass)
       ui.area.edit.addClass(responsiveClass).show()
       ui.area.view.addClass(scrollClass)
@@ -1065,7 +1095,7 @@ function changeMode (type) {
       serverurl + '/' + noteid + '?' + appState.currentMode.name
     )
   }
-  if (appState.currentMode === modeType.view) {
+  if (appState.currentMode === modeType.view || appState.currentMode === modeType.guide) {
     editor.getInputField().blur()
   }
   if (
@@ -1136,8 +1166,9 @@ function changeMode (type) {
   ui.toolbar.both.removeClass('active')
   ui.toolbar.edit.removeClass('active')
   ui.toolbar.view.removeClass('active')
+  ui.toolbar.guide.removeClass('active')
   const modeIcon = ui.toolbar.mode.find('i')
-  modeIcon.removeClass('fa-pencil').removeClass('fa-eye')
+  modeIcon.removeClass('fa-pencil').removeClass('fa-eye').removeClass('fa-info')
   if (ui.area.edit.is(':visible') && ui.area.view.is(':visible')) {
     // both
     ui.toolbar.both.addClass('active')
@@ -1150,6 +1181,9 @@ function changeMode (type) {
     // view
     ui.toolbar.view.addClass('active')
     modeIcon.addClass('fa-pencil')
+  } else if (ui.area.guide.is(':visible')){
+    ui.toolbar.guide.addClass('active')
+    modeIcon.addClass('fa-info')
   }
   unlockNavbar()
 }
@@ -2050,6 +2084,9 @@ ui.toolbar.view.click(function () {
 ui.toolbar.both.click(function () {
   changeMode(modeType.both)
 })
+ui.toolbar.guide.click(function () {
+  changeMode(modeType.guide)
+})
 
 ui.toolbar.night.click(function () {
   toggleNightMode()
@@ -2145,6 +2182,13 @@ function updatePermission (newPermission) {
     ui.infobar.permission.label.addClass('disabled')
   }
   ui.infobar.permission.label.html(label).attr('title', title)
+  let ariaEditLabel = ""
+  if (personalInfo.login) {
+    ariaEditLabel = document.getElementById("editAccessLabelLogin").innerText + " " + title
+  } else {
+    ariaEditLabel = document.getElementById("editAccessLabelLogout").innerText + " " + title
+  }
+  ui.infobar.permission.label.html(label).attr('aria-label', ariaEditLabel)
 }
 
 function havePermission () {
@@ -2578,7 +2622,7 @@ socket.on('refresh', function (data) {
       if (visibleXS) {
         appState.currentMode = modeType.edit
       } else {
-        appState.currentMode = modeType.both
+        appState.currentMode = modeType.guide
       }
     }
     // parse mode from url

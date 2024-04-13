@@ -103,6 +103,10 @@
     z-index: 10000;
 }
 
+.ui-toc-title {
+
+}
+
 .ui-toc-label {
     opacity: 0.3;
     background-color: #ccc;
