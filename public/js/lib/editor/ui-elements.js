@@ -34,6 +34,7 @@ export const getUIElements = () => ({
     edit: $('.ui-edit'),
     view: $('.ui-view'),
     both: $('.ui-both'),
+    guide: $('.ui-guide'),
     night: $('.ui-night')
   },
   infobar: {
@@ -62,6 +63,7 @@ export const getUIElements = () => ({
   area: {
     edit: $('.ui-edit-area'),
     view: $('.ui-view-area'),
+    guide: $('.ui-guide-area'),
     codemirror: $('.ui-edit-area .CodeMirror'),
     codemirrorScroll: $('.ui-edit-area .CodeMirror .CodeMirror-scroll'),
     codemirrorSizer: $('.ui-edit-area .CodeMirror .CodeMirror-sizer'),
